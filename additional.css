@@ -1,0 +1,38 @@
+
+.menu{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    background-color: transparent;
+    
+}
+.back
+{
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+}
+.function{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: transparent;
+}
+.contact{
+    display: grid;
+    grid-template-columns: 14fr 1fr;
+    background-color: transparent;
+    border: sloid 1px black;
+    justify-content: space-between;
+}
+table{
+    display: inline-block;
+    padding: 5px;
+    margin-top:40px ;
+    border: 1px solid ;
+    border-radius: 12px; 
+}
+.fun{
+    margin-bottom: 14;
+    padding: 18px
+} 
+

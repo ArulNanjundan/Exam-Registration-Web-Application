@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exam Registration</title>
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="login.css">
+    </head> 
+    <body>
+        <h2 style="color: blue;">Forget Password</h2><hr>
+        <div class="background"></div>
+        <center>
+            <img src="tn_govt.png"><br>     
+            <b class="heading">அரசுத் தேர்வுகள் இயக்ககம்<br>
+                Directorate of Government Examinations</b>
+        </center>
+        <center>
+        
+            <div class="log">
+                <div class="info">
+                    <form action="reset_pass.html" onsubmit="return form_validation()">
+                        <h2 style="color: rgb(138, 12, 138);">Forgot Password</h2>
+                        <table cellpadding="5px" cellspacing="10px">
+                            <tr>
+                                <td align="end">
+                                    <label>User Name:</label>
+                                    <sup>*</sup>
+                                </td>
+                                <td>
+                                    <input type="email" id="user_name" placeholder="name@gmail.com" oninput="username_validation()">
+                                    <div class="error" id="user_name_error" >Must end with @gmail.com</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <button type="submit">NEXT</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </center>
+
+        <script>
+            function username_validation() {
+                const name = document.getElementById('user_name').value;
+                const name_error = document.getElementById('user_name_error');
+                const regex = /^[a-zA-Z0-9_]+@gmail.com$/;
+                
+                if (regex.test(name)) {
+                    name_error.style.display = 'none';
+                    return true;
+                } else {
+                    name_error.style.display = 'block';
+                    return false;
+                }
+            }
+            
+            function form_validation() {
+                const name = document.getElementById('user_name').value;
+                if(!(name==='')){
+                    const user_name= username_validation();
+                    if(user_name){
+                        return true;
+                    }
+                    else{
+                        alert('User_name is not Valid');
+                        return false;
+                    }
+                }
+                else{
+                    alert('UserName Field is Empty.Plz Fill it...!');
+                    return false;
+                }
+                
+            }
+        </script>
+    </body>   
+</html>

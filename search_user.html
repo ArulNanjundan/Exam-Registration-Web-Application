@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exam Registration</title>
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="search.css">
+        <link rel="stylesheet" href="index.css">
+    </head> 
+    <body>
+        <h2 style="color: blue;">View</h2><hr>
+        <div class="background"></div>
+        <div class="menu">
+            <div class="function">
+                <div class="item"><a href="about.html">About Us</a></div>
+            </div>
+            <div class="back">
+                <div class="item"><a href="user.html">Back</a></div>
+            </div> 
+        </div>
+        <center>
+        <div class="govt">
+            <img src="tn_govt.png"><br>        
+            <b class="heading">அரசுத் தேர்வுகள் இயக்ககம்<br>
+                            Directorate of Government Examinations </b>
+        </div>
+        <div class="search">
+            <h2 style="color: blueviolet;">Search Your Application</h2>
+            <form action="sea_user.php" onsubmit="return form_validation()" method="POST">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="search" oninput="search_validation()" id="search_item" placeholder="Search....!" name="search">
+                            <div class="error" id="search_error">Application in 6 digits</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                                <button type="submit">VIEW</button>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </form>
+        </div>
+        </center>
+        <hr>
+    <div class="add">
+        <h2>Contact</h2>
+        <center>
+        <address>
+            Directorate of Government Examinations
+            DPI Campus,<br>College Road 
+            Nungambakkam,<br>Chennai-600 006. <br>
+            Phone :9342384050<br>
+            E-Mail:arulnanjundan@gmail.com
+        </address>
+        </center>
+    </div> 
+    <script>
+        function search_validation() {
+            const sea = document.getElementById('search_item').value;
+            const sea_val = document.getElementById('search_error');
+            const regex = /^[0-9]{6}$/;
+            if (!regex.test(sea)) {
+                sea_val.style.display = 'block';
+                return false;
+            } else {
+                sea_val.style.display = 'none';
+                return true;
+            }
+        }
+
+        function form_validation() {
+            const sea = document.getElementById('search_item').value;
+            if (sea === '') {
+                alert('Search is empty. Please fill it!');
+                return false;
+            } else {
+                if (!search_validation()) {
+                    alert('Please enter a valid 6-digit application number!');
+                    return false;
+                }
+                return true;
+            }
+        }
+    </script>                 
+    </body>   
+</html>

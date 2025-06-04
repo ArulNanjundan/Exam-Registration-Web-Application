@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+h2 {
+    text-align: center;
+    color:blue;
+}
+table {
+    display: inline;
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border:none;
+}
+th, td {
+    border: 1px solid #080808;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #3115e9;
+    color: #ccc;
+}
+
+.no-data {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}

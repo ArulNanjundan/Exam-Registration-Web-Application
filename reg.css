@@ -1,0 +1,132 @@
+.table_form{
+    display: inline-block;
+    padding: 10px;
+    margin-top:40px ;
+    border: 1px solid ;
+    border-radius: 12px;
+}
+
+input[type="text"],input[type="date"],input[type="number"]{
+    height: 30px;
+    width: 300px;
+}
+
+sup{
+    color: rgb(244, 15, 15);
+    font-size: 18px;
+}
+input:focus{
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 8px 4px rgb(179, 177, 177);
+    border-radius: 4px;
+}
+select{
+    height: 36px;
+    width: 310px;
+}
+select:focus{
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 8px 4px rgb(179, 177, 177);
+    border-radius: 4px;
+}
+button{
+    font-size: 17px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 12px;
+    background-color:rgb(54, 207, 54);
+    color: beige;
+    border: none;
+}
+.reset{
+    font-size: 17px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 12px;
+    background-color:rgb(219, 33, 26);
+    color: beige;
+}
+.submit{
+    font-size: 17px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 12px;
+    background-color:rgba(10, 37, 123, 0.907);
+    color: beige;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color:rgba(2, 85, 2, 0.962);
+    color: beige;
+    border: none;
+}
+.error{
+    display: none;
+    color: red;
+    font-size: 15px;
+}
+address{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font: bold;
+    font-size:17px ;
+    color: rgba(96, 3, 3, 0.916);
+}
+h2{
+    color: blue;
+    font-weight: 100;
+}
+.item{
+    margin:5px ;
+    padding: 8px 10px;
+    background-color: rgb(242, 242, 242);
+    border-end-end-radius: 12px;
+    text-decoration: none;
+    color: black;
+    font-size:19px ;
+}
+
+.item:hover{
+    color:beige;
+    background-color:darkcyan;
+    padding: 8px 11px;
+    border-end-end-radius: 12px;
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.reset:hover{
+    background-color: rgb(135, 10, 10);
+}
+.submit:hover{
+    background-color: rgb(13, 1, 47);
+}
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: space-between;
+    background-color: transparent;
+    
+}
+.back
+{
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+}
+.function{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: transparent;
+}

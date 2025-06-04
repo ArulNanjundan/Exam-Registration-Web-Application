@@ -1,0 +1,92 @@
+.log{
+    display:inline-block;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 70px;
+}
+
+label{
+    font-size: 25px;
+}
+input{
+    height: 30px;
+    width: 300px;
+}
+
+button{
+    padding: 10px 12px;
+    background-color:white;
+    color:black;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+button:hover{
+    cursor: pointer;
+    background-color:green;
+    color: beige;
+    border: none;
+}
+sup{
+    color: rgb(244, 15, 15);
+    font-size: 18px;
+}
+.error{
+                display: none;
+                color: red;
+                font-size: 15px;
+}
+.reset:hover{
+    cursor: pointer;
+    background-color:rgb(139, 10, 10);
+    color: beige;
+    border: none;
+}
+a{
+    font-size:16px ;
+    text-decoration: none;
+}
+a:hover{
+    font-size:17px;
+    color:red;
+}
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-content: space-between;
+    background-color: transparent;
+    
+}
+.back
+{
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+}
+.function{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: transparent;
+}
+.item{
+    margin:5px ;
+    padding: 8px 10px;
+    background-color: rgb(242, 242, 242);
+    border-end-end-radius: 12px;
+    text-decoration: none;
+    color: black;
+    font-size:19px ;
+}
+.item:hover{
+    color:beige;
+    background-color:darkcyan;
+    padding: 9px 12px;
+    border-end-end-radius: 12px;
+    font-size: 19px;
+    cursor: pointer;
+}
+.item:hover a {
+    color: white;
+}

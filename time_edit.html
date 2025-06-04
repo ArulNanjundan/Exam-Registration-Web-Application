@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Registration</title>
+    <link rel="stylesheet" href="window.css">
+</head>
+<body>
+    <div class="edit-container">
+        <h3 style="color: blue;">Edit Exam Timetable</h2>
+        <hr>
+        <form action="time_edit.php" method="post">
+            <table>
+                <tr>
+                    <td><label>Exam ID:</label></td>
+                    <td>
+                        <select name="Exam_ID" id="Exam_ID" required>
+                            <option value="">- - - - - - - - -Select- - - - - - - -</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Exam Name:</label></td>
+                    <td>
+                        <select name="Exam_Name" id="Exam_Name" required>
+                            <option value="">- - - - - - - - - -Select- - - - - - - - -</option>
+                            <option value="TNPSC GROUP 1">TNPSC GROUP 1</option>
+                            <option value="TNPSC GROUP 2">TNPSC GROUP 2</option>
+                            <option value="TNPSC GROUP 2A">TNPSC GROUP 2A</option>
+                            <option value="TNPSC GROUP 4">TNPSC GROUP 4</option>
+                            <option value="TNUSRB POLICE CONSTABLE">TNUSRB POLICE CONSTABLE</option>
+                            <option value="TNUSRB SI">TNUSRB SI</option>
+                            <option value="TRB">TRB</option>
+                            <option value="TN MRB">TN MRB</option>
+                            <option value="TNEB">TNEB</option>
+                            <option value="SBI">SBI</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Start Date:</label></td>
+                    <td>
+                        <input type="date" name="date_1" id="date_1" min="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>End Date:</label></td>
+                    <td>
+                        <input type="date" name="date_2" id="date_2" min="" max="">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="start"><button class="back"><a href="exam_timetable_create.html">Back</a></button></td>
+                </tr>
+                <tr>
+                    <td align="start"><button type="reset" class="reset">Reset</button></td>
+                    <td align="end"><button type="submit" class="edit">Edit</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        function syncDropdowns() {
+            const examIdSelect = document.getElementById('Exam_ID');
+            const examNameSelect = document.getElementById('Exam_Name');
+    
+            examIdSelect.addEventListener('change', function() {
+                examNameSelect.selectedIndex = this.selectedIndex;
+            });
+    
+            examNameSelect.addEventListener('change', function() {
+                examIdSelect.selectedIndex = this.selectedIndex;
+            });
+        }
+    
+        window.onload = function() {
+            syncDropdowns();
+    
+            const startInput = document.getElementById('date_1');
+            const endInput = document.getElementById('date_2');
+    
+            const today = new Date();
+            const todayStr = today.toISOString().split('T')[0];
+            startInput.setAttribute('min', todayStr);
+    
+            startInput.addEventListener('change', function() {
+                const startDate = new Date(startInput.value);
+                if (!startInput.value) return;
+    
+                const minEnd = new Date(startDate);
+                minEnd.setDate(minEnd.getDate() + 1); 
+    
+                const maxEnd = new Date(startDate);
+                maxEnd.setDate(maxEnd.getDate() + 40);
+    
+                endInput.setAttribute('min', minEnd.toISOString().split('T')[0]);
+                endInput.setAttribute('max', maxEnd.toISOString().split('T')[0]);
+    
+                if (endInput.value) {
+                    const currentEnd = new Date(endInput.value);
+                    if (currentEnd < minEnd || currentEnd > maxEnd) {
+                        endInput.value = '';
+                    }
+                }
+            });
+        };
+       
+    </script>
+</body>
+</html>

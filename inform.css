@@ -1,0 +1,102 @@
+table{
+    border: solid black 1px;
+}
+h1{
+    color: rgb(160, 17, 17);
+}
+.head{
+    font-size: 25px;
+    color: blue;
+    background-color: rgb(183, 224, 236);
+}
+.one{
+    background-color: rgb(3, 100, 3);
+    color:whitesmoke;
+    font-size: 21px;
+    font-family: serif;
+}
+.two{
+    background-color: rgb(166, 238, 166);
+    color:rgb(0, 0, 0);
+    font-size: 21px;
+    font-family: serif;
+}
+.link{
+    text-decoration:none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 21px;
+    color:  aliceblue;
+}
+.link_1{
+    text-decoration:none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 21px;
+    color: rgba(0, 0, 0, 0.821);
+}
+.a{
+    font-size: 21px;
+    font-family: serif;
+    color: aliceblue;
+    background-color: rgb(41, 8, 228);
+}
+.b{
+    font-size: 21px;
+    font-family: serif;
+    color: rgba(0, 0, 0, 0.821);
+    background-color: rgb(204, 198, 240);
+}
+.top{
+    margin-bottom: 80px;
+}
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    justify-content: space-between;
+    background-color: transparent;
+    
+}
+.back
+{
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+}
+.function{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: transparent;
+}
+address{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font: bold;
+    font-size:17px ;
+    color: rgba(96, 3, 3, 0.916);
+}
+h2{
+    color: blue;
+    font-weight: 100;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+.item{
+    margin:5px ;
+    padding: 8px 10px;
+    background-color: rgb(242, 242, 242);
+    border-end-end-radius: 12px;
+    text-decoration: none;
+    color: black;
+    font-size:19px ;
+}
+.item:hover{
+    background-color:darkcyan;
+    color:beige;
+    padding: 9px 12px;
+    border-end-end-radius: 12px;
+    font-size: 19px;
+    cursor: pointer;
+}
+.item:hover a{
+    color: white;
+}

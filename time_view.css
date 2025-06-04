@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.table-container {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+table {
+    display: inline;
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 20px;
+    border: none;
+}
+th, td {
+    border: 1px solid #333;
+    padding: 8px 12px;
+    text-align: center;
+}
+th {
+    background-color: #007BFF;
+    color: white;
+}
+h2 {
+    text-align: center;
+    color: #007BFF;
+}

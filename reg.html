@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exam Registration</title>
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="reg.css">
+    </head> 
+    <body>
+        <h2 style="color:blue;">Registration</h2><hr>
+        <div class="menu">
+            <div class="back">
+                <div class="item"><a href="exam_reg.php">Back</a></div>
+            </div>
+            <div class="function">
+                <div class="item"><a href="about.html">About Us</a></div>
+                <div class="item"><a href="home.html">Home</a></div>
+            </div>   
+        </div>
+        <center>
+            <div class="background"></div>
+            <img src="tn_govt.png"><br>        
+            <b class="heading">அரசுத் தேர்வுகள் இயக்ககம்<br>
+                                    Directorate of Government Examinations </b>
+        </center>
+        <center>
+            <div class="table_form">
+            <form onsubmit="return form_validation()" method="POST">
+                <table cellspacing="10px" cellpadding="5px">
+                <tr>
+                    <td>
+                        <label>NAME</label><sup>*</sup>
+                    </td>
+                    <td>
+                        <label>INITIAL</label><sup>*</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="enter your name" oninput="name_validation()" id="name" name="name">
+                        <div class="error" id="name_error">In Captial(30-Letters)</div>
+    
+                    </td>
+                    <td>
+                        <input type="text" placeholder="initial in CAPITAL" oninput="name_validation_1()" id="initial" name="initial">
+                        <div class="error" id="initial_error">In Captial(1-2 Letters)</div>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <label>FATHER NAME</label>
+                    </td>
+                    <td>
+                        <label>MOTHER NAME</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="name of the father" oninput="name_validation_2()" id="father_name" name="father_name">
+                        <div class="error" id="father_error">In Captial[30-Letters]</div>
+                        
+                    </td>
+                    <td>
+                        <input type="text" placeholder="name of the mother" oninput="name_validation_3()" id="mother_name" name="mother_name">
+                        <div class="error" id="mother_error">In Captial(30-Letters)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <label>GUARDIAN NAME</label><sup>*</sup>
+                    </td>
+                    <td>
+                       <label>RELIGION</label><sup>*</sup>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="name of the guardian" oninput="name_validation_4()" id="guardian_name" name="guardian_name">
+                        <div class="error" id="guardian_error">In Captial(30-Letters)</div>
+                    </td>
+                    <td>
+                        <select name="RELIGION"required>
+                            <option value="">- - - - - - - - - -Select- - - - - - - - - -</option>
+                            <option value="HINDU">HINDU</option>
+                            <option value="CHRISTRIAN">CHRISTRIAN</option>
+                            <option value="ISLAM">ISLAM</option>
+                            <option value="BUDDHAM">BUDDHAM</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>GENDER</label><sup>*</sup>
+                    </td>
+                    <td>
+                        <label>COMMUNITY</label><sup>*</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="GENDER" value="MALE" required>MALE
+                        <input type="radio" name="GENDER" value="FEMALE" required>FEMALE
+                        <input type="radio" name="GENDER"  value="OTHER" required>OTHER
+                    </td>
+                    <td>
+                        <select name="COMMUNITY" required>
+                            <option value="">- - - - - - - - - -Select- - - - - - - - - -</option>
+                            <option value="SCHEDULED CASTES(SC)">SCHEDULED CASTES(SC)</option>
+                            <option value="SCHEDULED TRIBES(ST)">SCHEDULED TRIBES(ST)</option>
+                            <option value="MOST BACKWARD CLASSES(MBC)">MOST BACKWARD CLASSES(MBC)</option>
+                            <option value="BACKWARD CLASSES(BC)">BACKWARD CLASSES(BC)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>MOBILE NUMBER</label><sup>*</sup>
+                    </td>
+                    <td>
+                        <label>DOB</label><sup>*</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" placeholder="0123456789" oninput="mobile_no_validation()" id="mobile_no" name="mobile_no">
+                        <div class="error" id="mobile_no_error">In Digit[10(start with 6 to 9)]</div>
+                    </td>
+                    <td>
+                        <input type="date" min="1992-01-01" max="2007-12-31" required name="date">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>ADDRESS</label><sup>*</sup>
+                    </td>
+                </tr>
+                <tr >
+                    <td>
+                        <input type="text" placeholder="enter the Door Number & Street" oninput="door_no_validation()" id="door_no" name="street">
+                        <div class="error" id="door_no_error">Don't Use Special characters and only in Caps[30-Letters]</div>
+                    </td>
+                    <td>
+                        <input type="text" placeholder=" enter the Post" oninput="post_validation()" id="post" name="post">
+                        <div class="error" id="post_error">In captial[30-Letters]</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="district" required>
+                            <option value="">- - - - - - - - - -Select- - - - - - - - - -</option>
+                            <option value="ARIYALUR">ARIYALUR</option>
+                            <option value="CHENGALPATTU">CHENGALPATTU</option>
+                            <option value="CHENNAI">CHENNAI</option>
+                            <option value="COIMBATORE">COIMBATORE</option>
+                            <option value="CUDDALORE">CUDDALORE</option>
+                            <option value="DHARMAPURI">DHARMAPURI</option>
+                            <option value="DINDIGUL">DINDIGUL</option>
+                            <option value="ERODE">ERODE</option>
+                            <option value="KALLAKURICHI">KALLAKURICHI</option>
+                            <option value="KANCHEEPURAM">KANCHEEPURAM</option>
+                            <option value="KANNIYAKUMARI">KANNIYAKUMARI</option>
+                            <option value="KARUR">KARUR</option>
+                            <option value="KRISHNAGIRI">KRISHNAGIRI</option>
+                            <option value="MADURAI">MADURAI</option>
+                            <option value="MAYILADUTHURAI">MAYILADUTHURAI</option>
+                            <option value="NAGAPATTINAM">NAGAPATTINAM</option>
+                            <option value="NAMAKKAL">NAMAKKAL</option>
+                            <option value="NILGIRIS">NILGIRIS</option>
+                            <option value="PERAMBALUR">PERAMBALUR</option>
+                            <option value="PUDUKKOTTAI">PUDUKKOTTAI</option>
+                            <option value="RAMANATHAPURAM">RAMANATHAPURAM</option>
+                            <option value="RANIPET">RANIPET</option>
+                            <option value="SALEM">SALEM</option>
+                            <option value="SIVAGANGAI">SIVAGANGAI</option>
+                            <option value="TENKASI">TENKASI</option>
+                            <option value="THANJAVUR">THANJAVUR</option>
+                            <option value="THENI">THENI</option>
+                            <option value="THIRUVARUR">THIRUVARUR</option>
+                            <option value="THOOTHUKUDI">THOOTHUKUDI</option>
+                            <option value="TIRUCHIRAPPALLI">TIRUCHIRAPPALLI</option>
+                            <option value="TIRUNELVELI">TIRUNELVELI</option>
+                            <option value="TIRUPATHUR">TIRUPATHUR</option>
+                            <option value="TIRUPPUR">TIRUPPUR</option>
+                            <option value="TIRUVALLUR">TIRUVALLUR</option>
+                            <option value="TIRUVANNAMALAI">TIRUVANNAMALAI</option>
+                            <option value="VELLORE">VELLORE</option>
+                            <option value="VILLUPURAM">VILLUPURAM</option>
+                            <option value="VIRUDHUNAGAR">VIRUDHUNAGAR</option>
+                            
+                        </select>
+    
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Ex-600002" oninput="pin_validation()" id="pin_no" name="pin_no">
+                        <div class="error" id="pin_no_error">In Digit[6-Digit]</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="start" ><button class="reset">Reset</button></td>
+                    <td align="end" ><button type="submit" formaction="save.php">Save</button>
+                </tr>
+                <tr>
+                    <td align="end"><button type="submit" formaction="preview.php">Preview</button></td>
+                    <td align="start"><button type="submit" class="submit" formaction="reg.php">Submit</button></td>
+                </tr>
+                
+            </table>
+        </form>
+            
+        </div>
+        </center><hr>
+        <div class="add">
+            <h2>Contact</h2>
+            <center>
+            <address>
+                Directorate of Government Examinations
+                DPI Campus,<br>College Road 
+                Nungambakkam,<br>Chennai-600 006. <br>
+                Phone :044-28272088 <br>
+                E-Mail:directordge.tn@nic.in
+            </address>
+            </center>
+        </div>        
+       
+    <script>
+        function name_validation(){
+            const name=document.getElementById('name').value;
+            const name_error=document.getElementById('name_error');
+            const regex=/^[A-Z ]{1,30}$/;
+            if(regex.test(name)){
+                name_error.style.display='none';
+                return true;
+            }
+            else{
+                name_error.style.display='block';
+                return false;
+            }   
+        }
+        function name_validation_1(){
+            const initial=document.getElementById('initial').value;
+            const initial_error=document.getElementById('initial_error');
+            const regex=/^[A-Z ]{1,3}$/;
+            if(regex.test(initial)){
+                initial_error.style.display='none';
+                return true;
+            }
+            else{
+                initial_error.style.display='block';
+                return false;
+            }  
+        }  
+        function name_validation_2(){
+            const father_name=document.getElementById('father_name').value;
+            const father_name_error=document.getElementById('father_error');
+            const regex=/^[A-Z ]{1,30}$/;
+            if(regex.test(father_name)){
+                father_name_error.style.display='none';
+                return true;
+            }
+            else{
+                father_name_error.style.display='block';
+                return false;
+            }
+        
+        }
+        function name_validation_3(){
+            const mother_name=document.getElementById('mother_name').value;
+            const mother_name_error=document.getElementById('mother_error');
+            const regex=/^[A-Z ]{1,30}$/;
+            if(regex.test(mother_name)){
+                mother_name_error.style.display='none';
+                return true;
+            }
+            else{
+                mother_name_error.style.display='block';
+                return false;
+            }
+        
+        }
+        function name_validation_4(){
+            const guardian_name=document.getElementById('guardian_name').value;
+            const guardian_name_error=document.getElementById('guardian_error');
+            const regex=/^[A-Z ]{1,30}$/;
+            if(regex.test(guardian_name)){
+                guardian_name_error.style.display='none';
+                return true;
+            }
+            else{
+                guardian_name_error.style.display='block';
+                return false;
+            }
+        }
+        function mobile_no_validation(){
+            const mobile_no=document.getElementById('mobile_no').value;
+            const mobile_no_error=document.getElementById('mobile_no_error');
+            const regex=/^[6-9][0-9]{9}$/;
+            if(regex.test(mobile_no)){
+                mobile_no_error.style.display='none';
+                return true;
+            }
+            else{
+                mobile_no_error.style.display='block';
+                return false;
+            }
+        }
+        function door_no_validation(){
+            const door_no=document.getElementById('door_no').value;
+            const door_no_error=document.getElementById('door_no_error');
+            const regex=/^[A-Za-z0-9\/., ]{1,30}$/;
+            if(regex.test(door_no)){
+                door_no_error.style.display='none';
+                return true;
+            }
+            else{
+                door_no_error.style.display='block';
+                return false;
+            }
+        }
+        function post_validation(){
+            const post=document.getElementById('post').value;
+            const post_error=document.getElementById('post_error');
+            const regex=/^[A-Z]{1,30}$/;
+            if(regex.test(post)){
+                post_error.style.display='none';
+                return true;
+            }
+            else{
+                post_error.style.display='block';
+                return false;
+            }
+        }        
+        function pin_validation(){
+            const pin_no=document.getElementById('pin_no').value;
+            const pin_no_error=document.getElementById('pin_no_error');
+            const regex=/^[0-9]{6}$/;
+            if(regex.test(pin_no)){
+                pin_no_error.style.display='none';
+                return true;
+            }
+            else{
+                pin_no_error.style.display='block';
+                return false;
+            }
+        }
+        function form_validation(){
+            
+            const name_value=document.getElementById('name').value
+            if(!(name_value==='')){
+                const name=name_validation();
+                if(name){
+                    const initial_value=document.getElementById('initial').value;
+                    if(!(initial_value==='')){
+                        const initial=name_validation_1();
+                        if(initial){
+                            const guardian_name_value=document.getElementById('guardian_name').value;
+                            if(!(guardian_name_value==='')){
+                                const guardian=name_validation_4();
+                                if(guardian){
+                                    const mobile_no_value=document.getElementById('mobile_no').value;
+                                    if(!(mobile_no_value==='')){
+                                        const mobile_no=mobile_no_validation();
+                                        if(mobile_no){
+                                            const door_no_value=document.getElementById('door_no').value;
+                                            if(!(door_no_value==='')){
+                                                const door_no=door_no_validation();
+                                                if(door_no){
+                                                    const post_value=document.getElementById('post').value;
+                                                    if(!(door_no_value==='')){
+                                                        const post=post_validation();
+                                                        if(post){
+                                                            const pin_value=document.getElementById('pin_no').value;
+                                                            if(!(pin_value==='')){
+                                                                const pin=pin_validation();
+                                                                if(pin){
+                                                                    return true;
+                                                                }
+                                                                else{
+                                                                    alert('Pin field is not Valid');
+                                                                    return false;
+                                                                }
+                                                            }
+                                                            else{
+                                                                alert('Pin field is Empty.Plz fill it..!');
+                                                                return false;
+                                                            }
+                                                        }
+                                                        else{
+                                                            alert('Post field is not Valid');
+                                                            return false;
+                                                        }
+                                                    }
+                                                    else{
+                                                        alert('Post field is Empty.Plz fill it..!');
+                                                        return false;
+                                                    }
+                                                }
+                                                else{
+                                                    alert('Door no. field is not Valid');
+                                                    return false;
+                                                }
+                                            }
+                                            else{
+                                                alert('Door no. field is Empty.Plz fill it..!');
+                                                return false;
+                                            }
+                                        }
+                                        else{
+                                            alert('Mobile no. field is not Valid');
+                                            return false;
+                                        }
+                                    }
+                                    else{
+                                        alert('Mobile no. field is Empty.Plz fill it..!');
+                                        return false;
+                                    }
+                                }
+                                else{
+                                    alert('Guardian field is not Valid');
+                                    return false;
+                                }
+                            }
+                            else{
+                                alert('Guardian field is Empty.Plz fill it..!');
+                                return false;
+                            }
+                        }
+                        else{
+                            alert('Initial field is not Valid');
+                            return false;
+                        }
+                    }
+                    else{
+                        alert('Initial field is Empty.Plz fill it..!');
+                        return false;
+                    }
+                }
+                else{
+                    alert('Name field is not Valid');
+                    return false;
+                }
+            }
+            else{
+                alert('Name field is Empty.Plz fill it..!');
+                return false;
+            }
+        }
+    
+    </script>
+</body>   
+</html>

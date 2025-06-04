@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Exam Registration</title>
+    <link rel="stylesheet" href="window.css">
+</head>
+<body>
+    <div class="edit-container">
+        <h3 style="color:blue;">Delete Exam Timetable</h2><hr>
+        <center><h4>Select the Exam ID and Exam name</h4></center>
+        <form action="time_delete.php" method="post">
+            <table>
+                <tr>
+                    <td><label>Exam ID:</label></td>
+                    <td>
+                        <select name="Exam_ID" id="Exam_ID" required>
+                            <option value="">- - - - - - - -Select- - - - - - -</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Exam Name:</label></td>
+                    <td>
+                        <select name="Exam_Name" id="Exam_Name" required>
+                            <option value="">- - - - - - - -Select- - - - - - -</option>
+                            <option value="TNPSC GROUP 1">TNPSC GROUP 1</option>
+                            <option value="TNPSC GROUP 2">TNPSC GROUP 2</option>
+                            <option value="TNPSC GROUP 2A">TNPSC GROUP 2A</option>
+                            <option value="TNPSC GROUP 4">TNPSC GROUP 4</option>
+                            <option value="TNUSRB POLICE CONSTABLE">TNUSRB POLICE CONSTABLE</option>
+                            <option value="TNUSRB SI">TNUSRB SI</option>
+                            <option value="TRB">TRB</option>
+                            <option value="TN MRB">TN MRB</option>
+                            <option value="TNEB">TNEB</option>  
+                            <option value="SBI">SBI</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="start"><button class="back"><a href="exam_timetable_create.html">Back</a></button></td>
+                </tr>
+                <tr>
+                    <td align="start"><button type="reset" class="reset">Reset</button></td>
+                    <td align="end"><button type="submit" class="edit">Delete</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function syncDropdowns() {
+            const examIdSelect = document.getElementById('Exam_ID');
+            const examNameSelect = document.getElementById('Exam_Name');
+    
+            examIdSelect.addEventListener('change', function () {
+                examNameSelect.selectedIndex = this.selectedIndex;
+            });
+    
+            examNameSelect.addEventListener('change', function () {
+                examIdSelect.selectedIndex = this.selectedIndex;
+            });
+        }
+        window.onload = function () {
+            syncDropdowns();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exam Registration</title>
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="reg.css">
+    </head> 
+    <body>
+        <h2 style="color:blue;">User Registration</h2><hr>
+        <div class="background"></div>
+        <center>
+            <img src="tn_govt.png"><br>     
+            <b class="heading">அரசுத் தேர்வுகள் இயக்ககம்<br>
+                Directorate of Government Examinations </b>
+        </center>
+        <center>
+        <div class="log">
+            <div class="info">
+                <form action="new_login.php" onsubmit="return form_validation()" method="POST">
+                    <table cellpadding="5px" cellspacing="10px">
+                        <tr>
+                            <td align="end">
+                                <label> User Name:</label><sup>*</sup>
+                            </td>
+                            <td>
+                                <input type="text" placeholder="name@gmail.com" oninput="username_validation()" id="user_name" name="user">
+                                <div class="error" id="user_name_error">Must ends with @gmail.com</div>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="end">
+                                <label> Current Password:</label><sup>*</sup>
+                            </td>
+                            <td>
+                                <input type="password" placeholder="enter password" oninput="current_pass_validation()" id="current_password" name="current_password">
+                                <div class="error" id="current_pass_error">upper,lower,digit and special character present(8-16 characters)</div>
+                                <div class="error" id="match_pass_error_1">Password Do not Match</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="end">
+                                <label> Confirm Password:</label><sup>*</sup>
+                            </td>
+                            <td>
+                                <input type="password" placeholder="enter password" oninput="confirm_pass_validation()" id="confirm_password" name="confirm_password">
+                                <div class="error" id="confirm_pass_error">upper,lower,digit and special character present(8-16 characters)</div>
+                                <div class="error" id="match_pass_error_2">Password Do not Match</div>
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="reset" class="reset">RESET</button>
+                            </td>
+                            <td align="end">
+                                <button type="submit">SIGN IN</button>
+                            </td>
+                        </tr>  
+                    </table>
+                </form>
+            </div>
+        </div> 
+        </center>
+ 
+<script>
+    function username_validation(){
+        const name=document.getElementById('user_name').value;
+        const name_error=document.getElementById('user_name_error');
+        const regex=/^[a-zA-Z0-9_]+@gmail.com$/;
+        if(regex.test(name)){
+            name_error.style.display='none';
+            return true;
+        }
+        else{
+            name_error.style.display='block';
+            return false;
+        }
+    
+    }
+
+    function current_pass_validation(){
+        const current_password=document.getElementById('current_password').value;
+        const current_password_error=document.getElementById('current_pass_error');
+        const regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,16}$/;
+        if(regex.test(current_password)){
+            current_password_error.style.display='none';
+            return true;
+        }
+        else{
+            current_password_error.style.display='block';
+            return false;
+        }
+    }
+    function confirm_pass_validation(){
+        const confirm_password=document.getElementById('confirm_password').value;
+        const confirm_password_error=document.getElementById('confirm_pass_error');
+        const regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,16}$/;
+        if(regex.test(confirm_password)){
+            confirm_password_error.style.display='none';
+            return true;
+        }
+        else{
+            confirm_password_error.style.display='block';
+            return false;
+        }
+    }
+    function form_validation()
+    {
+
+        const match_error_1 = document.getElementById('match_pass_error_1');
+        const match_error_2 = document.getElementById('match_pass_error_2');
+        const name_value= document.getElementById('user_name').value;
+        if(!(name_value)=='')
+        {
+            const name=username_validation();
+            if(name){
+                const pass=current_pass_validation();
+                const cpass=confirm_pass_validation();
+                const current_pass = document.getElementById('current_password').value;
+                const confirm_pass = document.getElementById('confirm_password').value;
+                if(current_pass==='' || confirm_pass==='')
+                {
+                    alert('Password field is empty.Plz Fill it...!');
+                    return false;
+                }
+                else
+                {
+                    if(pass && cpass)
+                    {
+                        if(current_pass !== confirm_pass)
+                        {
+                            alert('Password is not matched');
+                            match_error_1.style.display = 'block';
+                            match_error_2.style.display = 'block';
+                            return false;
+                        } 
+                        else 
+                        {
+                            match_error_1.style.display = 'none';
+                            match_error_2.style.display = 'none';
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        current_pass_error.style.display = 'block';
+                        confirm_pass_error.style.display = 'block';
+                        return false;
+                    }
+                }
+            }
+            else{
+                alert('Name field is Not Valid.');
+                return false;
+            }
+        }
+        else{
+            alert('Name field is empty.Plz Fill it...!');
+            return false;
+        }
+    
+}
+
+</script>
+</body>   
+</html>
